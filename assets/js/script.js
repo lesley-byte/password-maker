@@ -1,3 +1,5 @@
+alert("🧨Remember to set to public before you submit!!!!!🧨");
+
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 // This function generates password and whatever is returned is
