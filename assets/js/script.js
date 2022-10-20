@@ -36,26 +36,56 @@ function generatePassword() {
     }
   }
   let msgy = "";
+  // create a variable called chosenCharacters to hold the uppercase alphabet
+  let possibleCharacters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+  let chosenCharacters = possibleCharacters.slice(0, 26);
+  console.log(chosenCharacters);
   if (
     userChoiceSpecial === "y" &&
     userChoiceNumeric === "y" &&
     userChoiceLower === "y"
   ) {
+    chosenCharacters = possibleCharacters;
     msgy = "You chose all character types.";
   } else if (userChoiceSpecial === "y" && userChoiceNumeric === "y") {
+    chosenCharacters = chosenCharacters.concat(
+      "",
+      possibleCharacters.slice(52, 62)
+    );
     msgy = "You chose special and numeric characters.";
   } else if (userChoiceSpecial === "y" && userChoiceLower === "y") {
+    chosenCharacters = chosenCharacters.concat(
+      "",
+      possibleCharacters.slice(26, 52)
+    );
     msgy = "You chose special and lowercase characters.";
   } else if (userChoiceNumeric === "y" && userChoiceLower === "y") {
+    chosenCharacters = chosenCharacters.concat(
+      "",
+      possibleCharacters.slice(52, 62)
+    );
     msgy = "You chose numeric and lowercase characters.";
   } else if (userChoiceSpecial === "y") {
+    chosenCharacters = chosenCharacters.concat(
+      "",
+      possibleCharacters.slice(26, 36)
+    );
     msgy = "You chose special characters.";
   } else if (userChoiceNumeric === "y") {
+    chosenCharacters = chosenCharacters.concat(
+      "",
+      possibleCharacters.slice(36, 62)
+    );
     msgy = "You chose numeric characters.";
   } else if (userChoiceLower === "y") {
+    chosenCharacters = chosenCharacters.concat(
+      "",
+      possibleCharacters.slice(52, 62)
+    );
     msgy = "You chose lowercase characters.";
   }
-  return msgy;
+  return msgy + chosenCharacters;
 }
 // This function writes password to the #password box.
 function writePassword() {
