@@ -62,7 +62,6 @@
 // ------------------------------------------------------------
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
 // ------------------------------------------------------------
 function askUser() {
     console.log("askUser() was called");
@@ -102,6 +101,7 @@ var isUpperCase = choicyChoice[2];
 var isNumeric = choicyChoice[3];
 var isSpecial = choicyChoice[4];
     console.log("generatePassword() was called");
+    // there are 3 characters that I didn't include: space, \, and ".  I'm not sure if I should include them or not.
 var possibleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 var chosenCharacters = "";
 var upperCaseChoice = possibleCharacters.slice(0, 26);
@@ -142,7 +142,7 @@ return passwordy;
 // ------------------------------------------------------------
 function writePassword() {
     console.log("writePassword() was called");
-    var password = ("Your New Password is: " + generatePassword(askUser()));
+    var password = ("Your Secure Password is: " + generatePassword(askUser()));
     var advicey = ("Please copy your password to a safe place.");
     var passwordText = document.querySelector("#password");
     var advisement = document.querySelector("#isGenerated");
