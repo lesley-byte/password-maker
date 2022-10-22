@@ -118,6 +118,22 @@ button[disabled] {
   overflow: hidden;
 }
 
+#isGenerated {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize: none;
+  }
+
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
