@@ -18,8 +18,11 @@ I started the creative process for making the JavaScript on this website with dr
 
 ![flowchart](assets/images/mindchart-challenge3.png)
 
-After that I wrote pseudocode to work out what should happen.
+After that I wrote pseudocode to work out what should happen:
+
 ![pseudocode](assets/images/pseudocode-challenge3.png)
+
+After that a lot of console.log() to see what was going on.
 
 ## Credits
 
