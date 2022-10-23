@@ -10,7 +10,7 @@ You click the red button and follow the pop-up prompts till it gives you the pas
 
 [Link to application](https://lesley-byte.github.io/password-maker/)
 
-![screenshot](assets/images.screenshot.png)
+![screenshot](assets/images/screenshot.png)
 
 ## Credits
 
@@ -22,16 +22,16 @@ MIT License
 
 ## Badges
 
-[shields.io](https://shields.io/)
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+![badmath](https://img.shields.io/badge/javascript-bootcamp-blue)
 
 ## Features
 
 - html
 - css
 - JavaScript
-- Its free and open source!
+- Pseudo code in the js file
+- Lots of comments in the js file
+- Console.log() to test code shows when you inspect the page
 - Effort
 
 ## Tests
