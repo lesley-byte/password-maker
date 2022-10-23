@@ -12,6 +12,15 @@ You click the red button and follow the pop-up prompts till it gives you the pas
 
 ![screenshot](assets/images/screenshot.png)
 
+## My Creative Process
+
+I started the creative process for making the JavaScript on this website with drawing a mindline/simplified flow chart like this:
+
+![flowchart](assets/images/mindchart-challenge3.png)
+
+After that I wrote pseudocode to work out what should happen.
+![pseudocode](assets/images/pseudocode-challenge3.png)
+
 ## Credits
 
 The Rutgers Full Stack Coding Bootcamp program with the fantastic instructors, tutors and graders really helped me with this. I am grateful.
