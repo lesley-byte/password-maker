@@ -1,3 +1,10 @@
+//declaring and testing ascii values for nuance characters
+let bubb1 = String.fromCharCode(34);
+console.log(bubb1); // "
+let bubb2 = String.fromCharCode(92);
+console.log(bubb2); // "
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // ------------------------------------------------------------
@@ -67,12 +74,12 @@ function generatePassword(choicyChoice) {
   console.log("generatePassword() was called");
   // there are 3 characters that I didn't include: space, \, and ".  I'm not sure if I should include them or not.
   var possibleCharacters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+    ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~" + bubb1 + bubb2);
   var chosenCharacters = "";
   var upperCaseChoice = possibleCharacters.slice(0, 26);
   var lowerCaseChoice = possibleCharacters.slice(26, 52);
   var numericChoice = possibleCharacters.slice(52, 62);
-  var specialChoice = possibleCharacters.slice(62, 94);
+  var specialChoice = possibleCharacters.slice(62, 96);
   var chosenCharacters = "";
   if (isLowerCase && isUpperCase && isNumeric && isSpecial) {
     chosenCharacters = possibleCharacters;
@@ -132,6 +139,7 @@ function writePassword() {
     var advisement = document.querySelector("#isGenerated");
     passwordText.value = password;
     advisement.value = advicey;
+    alert("***BeeBoop!*** You quit the program. Click the red button to try again!");
     console.log("you quit the program");
   } else {
   var advicey = "Please copy your password to a safe place.";
@@ -143,3 +151,5 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
