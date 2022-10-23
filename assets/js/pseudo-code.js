@@ -1,5 +1,5 @@
-// this is a fresh attempt 
-// things to note: 
+// this is a fresh attempt
+// things to note:
 // Password special characters are: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 // Password numeric characters are: 0123456789
 // Password lowercase characters are: abcdefghijklmnopqrstuvwxyz
@@ -50,7 +50,7 @@
 //   return passwordy
 // }
 // function writePassword() is already written
-// function copyPassword() { 
+// function copyPassword() {
 //   create a variable called copyText to hold the password
 //   copyText.select();
 //   copyText.setSelectionRange(0, 99999); /* For mobile devices */
@@ -64,89 +64,131 @@
 var generateBtn = document.querySelector("#generate");
 // ------------------------------------------------------------
 function askUser() {
-    console.log("askUser() was called");
-var passwordLength = prompt("How many characters would you like your password to be? It must be between 8 and 128 characters.");
-while (passwordLength < 8 || passwordLength > 128) {
-    var wantToExit = confirm("You must enter a number between 8 and 128. Would you like to quit the program?");
+  console.log("askUser() was called");
+  var passwordLength = prompt(
+    "How many characters would you like your password to be? It must be between 8 and 128 characters."
+  );
+  while (passwordLength < 8 || passwordLength > 128) {
+    var wantToExit = confirm(
+      "You must enter a number between 8 and 128. Would you like to quit the program?"
+    );
     if (wantToExit) {
-        return;
+      return;
     }
-    passwordLength = prompt("How many characters would you like your password to be? It must be between 8 and 128 characters.");
-}
-var isLowerCase = confirm("Would you like to include lowercase characters?(Ok=Yes, Cancel=No)");
-var isUpperCase = confirm("Would you like to include uppercase characters?(Ok=Yes, Cancel=No)");
-var isNumeric = confirm("Would you like to include numeric characters?(Ok=Yes, Cancel=No)");
-var isSpecial = confirm("Would you like to include special characters?(Ok=Yes, Cancel=No)");
-while (!isLowerCase && !isUpperCase && !isNumeric && !isSpecial) {
-    var wantToExit = confirm("You must select at least one character type. Would you like to quit the program?(Ok=Yes, Cancel=No)");
+    passwordLength = prompt(
+      "How many characters would you like your password to be? It must be between 8 and 128 characters."
+    );
+  }
+  var isLowerCase = confirm(
+    "Would you like to include lowercase characters?(Ok=Yes, Cancel=No)"
+  );
+  var isUpperCase = confirm(
+    "Would you like to include uppercase characters?(Ok=Yes, Cancel=No)"
+  );
+  var isNumeric = confirm(
+    "Would you like to include numeric characters?(Ok=Yes, Cancel=No)"
+  );
+  var isSpecial = confirm(
+    "Would you like to include special characters?(Ok=Yes, Cancel=No)"
+  );
+  while (!isLowerCase && !isUpperCase && !isNumeric && !isSpecial) {
+    var wantToExit = confirm(
+      "You must select at least one character type. Would you like to quit the program?(Ok=Yes, Cancel=No)"
+    );
     if (wantToExit) {
-        return;
+      return;
     }
     alert("You must select at least one character type.");
-    isLowerCase = confirm("Would you like to include lowercase characters?(Ok=Yes, Cancel=No)");
-    isUpperCase = confirm("Would you like to include uppercase characters?(Ok=Yes, Cancel=No)");
-    isNumeric = confirm("Would you like to include numeric characters?(Ok=Yes, Cancel=No)");
-    isSpecial = confirm("Would you like to include special characters?(Ok=Yes, Cancel=No)");
-} 
-console.log("askUser() is returning");
-console.log(passwordLength, isLowerCase, isUpperCase, isNumeric, isSpecial);
-return [passwordLength, isLowerCase, isUpperCase, isNumeric, isSpecial];
+    isLowerCase = confirm(
+      "Would you like to include lowercase characters?(Ok=Yes, Cancel=No)"
+    );
+    isUpperCase = confirm(
+      "Would you like to include uppercase characters?(Ok=Yes, Cancel=No)"
+    );
+    isNumeric = confirm(
+      "Would you like to include numeric characters?(Ok=Yes, Cancel=No)"
+    );
+    isSpecial = confirm(
+      "Would you like to include special characters?(Ok=Yes, Cancel=No)"
+    );
+  }
+  console.log("askUser() is returning");
+  console.log(passwordLength, isLowerCase, isUpperCase, isNumeric, isSpecial);
+  return [passwordLength, isLowerCase, isUpperCase, isNumeric, isSpecial];
 }
 // ------------------------------------------------------------
 function generatePassword(choicyChoice) {
-var passwordLength = choicyChoice[0];
-var isLowerCase = choicyChoice[1];
-var isUpperCase = choicyChoice[2];
-var isNumeric = choicyChoice[3];
-var isSpecial = choicyChoice[4];
-    console.log("generatePassword() was called");
-    // there are 3 characters that I didn't include: space, \, and ".  I'm not sure if I should include them or not.
-var possibleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-var chosenCharacters = "";
-var upperCaseChoice = possibleCharacters.slice(0, 26);
-var lowerCaseChoice = possibleCharacters.slice(26, 52);
-var numericChoice = possibleCharacters.slice(52, 62);
-var specialChoice = possibleCharacters.slice(62, 94);
-var chosenCharacters = "";
-if (isLowerCase && isUpperCase && isNumeric && isSpecial) {
+  var passwordLength = choicyChoice[0];
+  var isLowerCase = choicyChoice[1];
+  var isUpperCase = choicyChoice[2];
+  var isNumeric = choicyChoice[3];
+  var isSpecial = choicyChoice[4];
+  console.log("generatePassword() was called");
+  // there are 3 characters that I didn't include: space, \, and ".  I'm not sure if I should include them or not.
+  var possibleCharacters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+  var chosenCharacters = "";
+  var upperCaseChoice = possibleCharacters.slice(0, 26);
+  var lowerCaseChoice = possibleCharacters.slice(26, 52);
+  var numericChoice = possibleCharacters.slice(52, 62);
+  var specialChoice = possibleCharacters.slice(62, 94);
+  var chosenCharacters = "";
+  if (isLowerCase && isUpperCase && isNumeric && isSpecial) {
     chosenCharacters = possibleCharacters;
-    console.log("Ok this should be all possible characters. chosenCharacters = " + chosenCharacters);
-}else {
-if (isLowerCase) {
-    chosenCharacters = chosenCharacters.concat("", lowerCaseChoice);
-    console.log("This should be adding lowercase characters chosenCharacters = " + chosenCharacters);
-}
-if (isUpperCase) {
-    chosenCharacters = chosenCharacters.concat("", upperCaseChoice);
-    console.log("This should be adding uppercase characters. chosenCharacters = " + chosenCharacters);
-}
-if (isNumeric) {
-    chosenCharacters = chosenCharacters.concat("", numericChoice);
-    console.log("This should be adding chosenCharacters = " + chosenCharacters);
-}
-if (isSpecial) {
-    chosenCharacters = chosenCharacters.concat("", specialChoice);
-    console.log("This should be adding chosenCharacters = " + chosenCharacters);
-}
-}
-console.log("chosenCharacters = " + chosenCharacters);
-var passwordy = "";
-for (var i = 0; i < passwordLength; i++) {
-    passwordy = passwordy + chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
-}
-console.log("generatePassword() is returning");
-console.log(passwordy);
-return passwordy;
+    console.log(
+      "Ok this should be all possible characters. chosenCharacters = " +
+        chosenCharacters
+    );
+  } else {
+    if (isLowerCase) {
+      chosenCharacters = chosenCharacters.concat("", lowerCaseChoice);
+      console.log(
+        "This should be adding lowercase characters chosenCharacters = " +
+          chosenCharacters
+      );
+    }
+    if (isUpperCase) {
+      chosenCharacters = chosenCharacters.concat("", upperCaseChoice);
+      console.log(
+        "This should be adding uppercase characters. chosenCharacters = " +
+          chosenCharacters
+      );
+    }
+    if (isNumeric) {
+      chosenCharacters = chosenCharacters.concat("", numericChoice);
+      console.log(
+        "This should be adding chosenCharacters = " + chosenCharacters
+      );
+    }
+    if (isSpecial) {
+      chosenCharacters = chosenCharacters.concat("", specialChoice);
+      console.log(
+        "This should be adding chosenCharacters = " + chosenCharacters
+      );
+    }
+  }
+  console.log("chosenCharacters = " + chosenCharacters);
+  var passwordy = "";
+  for (var i = 0; i < passwordLength; i++) {
+    passwordy =
+      passwordy +
+      chosenCharacters.charAt(
+        Math.floor(Math.random() * chosenCharacters.length)
+      );
+  }
+  console.log("generatePassword() is returning");
+  console.log(passwordy);
+  return passwordy;
 }
 // ------------------------------------------------------------
 function writePassword() {
-    console.log("writePassword() was called");
-    var password = ("Your Secure Password is: " + generatePassword(askUser()));
-    var advicey = ("Please copy your password to a safe place.");
-    var passwordText = document.querySelector("#password");
-    var advisement = document.querySelector("#isGenerated");
-    passwordText.value = password;
-    advisement.value = advicey;
-    }
+  console.log("writePassword() was called");
+  var password = "Your Secure Password is: " + generatePassword(askUser());
+  var advicey = "Please copy your password to a safe place.";
+  var passwordText = document.querySelector("#password");
+  var advisement = document.querySelector("#isGenerated");
+  passwordText.value = password;
+  advisement.value = advicey;
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
