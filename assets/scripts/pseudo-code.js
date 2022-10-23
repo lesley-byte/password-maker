@@ -187,7 +187,6 @@ function generatePassword(choicyChoice) {
 function writePassword() {
   console.log("writePassword() was called");
   var password = "Your Secure Password is: " + generatePassword(askUser());
-  console.log("|" + password + "|");
   if (password === "Your Secure Password is: quit") {
     password = "You quit the program.";
     var advicey = "You quit the program. Click the button to try again.";
@@ -195,6 +194,7 @@ function writePassword() {
     var advisement = document.querySelector("#isGenerated");
     passwordText.value = password;
     advisement.value = advicey;
+    console.log("you quit the program");
   } else {
   var advicey = "Please copy your password to a safe place.";
   var passwordText = document.querySelector("#password");
