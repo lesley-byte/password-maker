@@ -26,7 +26,8 @@ After that a lot of console.log() to see what was going on.
 
 ## Credits
 
-The Rutgers Full Stack Coding Bootcamp program with the fantastic instructors, tutors and graders really helped me with this. I am grateful.
+- The Rutgers Full Stack Coding Bootcamp program with the fantastic instructors, tutors and graders really helped me with this. I am grateful.
+- Also I'm borrowing the basic code structure to use the copy api from [w3docs](https://www.w3docs.com/snippets/javascript/how-to-copy-the-text-to-the-clipboard-with-javascript.html) .
 
 ## License
 
