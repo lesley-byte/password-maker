@@ -158,7 +158,7 @@ generateBtn.addEventListener("click", writePassword);
     console.log(text2);
     navigator.clipboard.writeText(text2)
       .then(() => {
-        alert('Text copied to clipboard');
+        alert(text2 + ' copied to clipboard');
       })
       .catch(err => {
         alert('Error in copying text: ', err);
