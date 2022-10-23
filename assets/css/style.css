@@ -50,8 +50,16 @@ header {
   height: 2px;
 }
 
-.card-body {
+.card-body {  
+  margin-top: 10px;
+  border: 2px dashed #c0c7cf;
+  border-radius: 6px;
   min-height: 100px;
+  display: flex;
+  min-height: 100px;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .card-footer {
@@ -87,6 +95,21 @@ header {
   text-align: center;
   cursor: pointer;
 }
+.btn2 {
+  margin: 10px;
+    border: none;
+    background-color: #c0c7cf;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 18px;
+    line-height: 22px;
+    /* margin: 16px 16px 16px 20px; */
+    padding: 5px 21px;
+    text-align: center;
+    cursor: pointer;
+}
 
 button[disabled] {
   cursor: default;
@@ -112,8 +135,8 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
+  /* border: 2px dashed #c0c7cf;
+  border-radius: 6px; */
   resize: none;
   overflow: hidden;
 }
@@ -141,6 +164,13 @@ button[disabled] {
     padding: 10px 15px;
   }
 
+  .btn2 {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding: 10px 15px;
+  }
+
   #password {
     font-size: 1rem;
   }
@@ -148,6 +178,9 @@ button[disabled] {
 
 @media (max-width: 500px) {
   .btn {
+    font-size: 0.8rem;
+  }
+  .btn2 {
     font-size: 0.8rem;
   }
 }
