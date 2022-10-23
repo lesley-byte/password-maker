@@ -1,12 +1,6 @@
-//declaring and testing ascii values for nuance characters
-let bubb1 = String.fromCharCode(34);
-console.log(bubb1); // "
-let bubb2 = String.fromCharCode(92);
-console.log(bubb2); // "
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyPasswordBtn = document.querySelector("#copyPasswordBtn");
 // ------------------------------------------------------------
 function askUser() {
   console.log("askUser() was called");
@@ -72,7 +66,11 @@ function generatePassword(choicyChoice) {
   var isNumeric = choicyChoice[3];
   var isSpecial = choicyChoice[4];
   console.log("generatePassword() was called");
-  // there are 3 characters that I didn't include: space, \, and ".  I'm not sure if I should include them or not.
+  //declaring and testing ascii values for nuance characters
+  var bubb1 = String.fromCharCode(34);
+  console.log(bubb1); // "
+  var bubb2 = String.fromCharCode(92);
+  console.log(bubb2); // "
   var possibleCharacters =
     ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~" + bubb1 + bubb2);
   var chosenCharacters = "";
@@ -151,5 +149,23 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// function copyPassword() {
+  document.getElementById("copyPasswordBtn")
+  .onclick = function() {
+    let text = document.getElementById("password").value;
+    var text2 = text.slice(25);
+    console.log(text2);
+    navigator.clipboard.writeText(text2)
+      .then(() => {
+        alert('Text copied to clipboard');
+      })
+      .catch(err => {
+        alert('Error in copying text: ', err);
+      });
+  }
+// }
+
+// copyPasswordBtn.addEventListener("click", copyPassword);
 
 
