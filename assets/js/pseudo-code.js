@@ -92,8 +92,7 @@ console.log("askUser() is returning");
 console.log(passwordLength, isLowerCase, isUpperCase, isNumeric, isSpecial);
 return [passwordLength, isLowerCase, isUpperCase, isNumeric, isSpecial];
 }
-
-// }
+// ------------------------------------------------------------
 function generatePassword(choicyChoice) {
 var passwordLength = choicyChoice[0];
 var isLowerCase = choicyChoice[1];
@@ -149,6 +148,5 @@ function writePassword() {
     passwordText.value = password;
     advisement.value = advicey;
     }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
