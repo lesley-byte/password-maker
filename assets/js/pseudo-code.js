@@ -73,7 +73,7 @@ function askUser() {
       "You must enter a number between 8 and 128. Would you like to quit the program?"
     );
     if (wantToExit) {
-      return;
+      return "quit";
     }
     passwordLength = prompt(
       "How many characters would you like your password to be? It must be between 8 and 128 characters."
@@ -96,7 +96,7 @@ function askUser() {
       "You must select at least one character type. Would you like to quit the program?(Ok=Yes, Cancel=No)"
     );
     if (wantToExit) {
-      return;
+      return "quit";
     }
     alert("You must select at least one character type.");
     isLowerCase = confirm(
@@ -118,6 +118,9 @@ function askUser() {
 }
 // ------------------------------------------------------------
 function generatePassword(choicyChoice) {
+  if (choicyChoice === "quit") {
+    return "quit";
+  }
   var passwordLength = choicyChoice[0];
   var isLowerCase = choicyChoice[1];
   var isUpperCase = choicyChoice[2];
@@ -184,11 +187,21 @@ function generatePassword(choicyChoice) {
 function writePassword() {
   console.log("writePassword() was called");
   var password = "Your Secure Password is: " + generatePassword(askUser());
+  console.log("|" + password + "|");
+  if (password === "Your Secure Password is: quit") {
+    password = "You quit the program.";
+    var advicey = "You quit the program. Click the button to try again.";
+    var passwordText = document.querySelector("#password");
+    var advisement = document.querySelector("#isGenerated");
+    passwordText.value = password;
+    advisement.value = advicey;
+  } else {
   var advicey = "Please copy your password to a safe place.";
   var passwordText = document.querySelector("#password");
   var advisement = document.querySelector("#isGenerated");
   passwordText.value = password;
   advisement.value = advicey;
+  }
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
