@@ -32,11 +32,16 @@ After that a lot of console.log() to see what was going on.
 ## License
 
 MIT License
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Badges
 
 ![badmath](https://img.shields.io/badge/javascript-bootcamp-blue)
+
+[![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com)
+
+![image](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 ## Features
 
@@ -47,6 +52,8 @@ MIT License
 - Lots of comments in the js file
 - Console.log() to test code shows when you inspect the page
 - Effort
+- [![forthebadge](https://forthebadge.com/images/badges/built-with-grammas-recipe.svg)](https://forthebadge.com)
+- [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
 
 ## Tests
 
